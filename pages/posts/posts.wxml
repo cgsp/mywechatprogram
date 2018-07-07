@@ -1,5 +1,5 @@
 <view>
-  <swiper interval="2000" indicator-dots="true" indicator-color="#40ae3b" autoplay="true" circular="true">
+  <swiper interval="2000" indicator-dots="true" indicator-color="#40ae3b" autoplay="true" circular="true" vertical='{{false}}'>
     <swiper-item>
       <image src='/images/swipper1.jpg' />
     </swiper-item>
@@ -11,18 +11,18 @@
     </swiper-item>
   </swiper>
   <view class="post-container">
-    <view class="post-author-data">
-      <image src="/images/avatar.png"></image>
-      <text>Nov 25 2016</text>
+    <view hidden='{{true}}' class="post-author-data">
+      <image src="{{author_image}}"></image>
+      <text>{{date}}</text>
     </view>
-    <!-- <text class='post-title'>正是虾肥蟹胖时</text> -->
-    <image class='post-image' src="/images/avatar.png"></image>
-    <text class='post-content'>正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时</text>
+    <text wx:if="{{true}}" class='post-title'>{{"helllo"+title}}</text>
+    <image class='post-image' src="{{post_image}}"></image>
+    <text class='post-content'>{{content}}</text>
     <view class='post-like'>
-      <image class='post-like-image' src="/images/avatar.png"></image>
-      <text class='post-like-font'>92</text>
-      <image class='post-like-image' src="/images/avatar.png"></image>
-      <text class='post-like-font'>65</text>
+      <image class='post-like-image' src="/images/star.png"></image>
+      <text class='post-like-font'>{{collect_num}}</text>
+      <image class='post-like-image' src="/images/view.png"></image>
+      <text class='post-like-font'>{{view_num}}</text>
     </view>
   </view>
 </view>
