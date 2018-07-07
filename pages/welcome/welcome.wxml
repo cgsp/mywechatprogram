@@ -1,0 +1,7 @@
+<view class='container'>
+  <image class='avatar' src='/images/avatar.jpg' mode='scaleToFill'></image>
+  <text class='name'>Hello，gsp</text>
+  <view class='moto-container'>
+    <text class='moto'>点击我呀</text>
+  </view>
+</view>
