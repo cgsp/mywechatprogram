@@ -1,3 +1,4 @@
+const postDatas = require('../../mock/posts-data.js');
 Page({
 
   /**
@@ -9,44 +10,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    const res = {
-      date: 'Sep 18 2016',
-      title: '正是虾肥螃蟹壮',
-      post_image: '/images/avatar.png',
-      content: '正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时正是虾肥蟹胖时',
-      view_num: 112,
-      collect_num: 96,
-      author_image: '/images/avatar.png'
-    }
-    this.setData(res);
+    this.setData({
+      res: postDatas.postList
+    });
+    console.log('post页面load')
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    console.log('post页面ready')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    console.log('post页面show')
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    console.log('post页面hide')
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    console.log('post页面unload')
   },
 
   /**
@@ -68,5 +63,12 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  toDetail(e){
+    console.log(e.currentTarget.dataset.postId);
+    wx.navigateTo({
+      url: 'post-detail/post-detail'
+    })
   }
 })

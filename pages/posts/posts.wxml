@@ -1,3 +1,7 @@
+<!-- 引入模板  -->
+<!-- <import src="post-item/post-item-template.wxml" /> -->
+<!--相对路径和绝对路径都可以  -->
+<import src="/pages/posts/post-item/post-item-template.wxml" />
 <view>
   <swiper interval="2000" indicator-dots="true" indicator-color="#40ae3b" autoplay="true" circular="true" vertical='{{false}}'>
     <swiper-item>
@@ -10,19 +14,9 @@
       <image src='/images/swipper3.jpg' />
     </swiper-item>
   </swiper>
-  <view class="post-container">
-    <view hidden='{{true}}' class="post-author-data">
-      <image src="{{author_image}}"></image>
-      <text>{{date}}</text>
+  <block wx:for="{{res}}" wx:for-item="item" wx:for-index="key" wx:key="key">
+    <view catch:tap="toDetail" data-post-id="{{item.postId}}">
+      <template is="postItem" data="{{...item}}" />
     </view>
-    <text wx:if="{{true}}" class='post-title'>{{"helllo"+title}}</text>
-    <image class='post-image' src="{{post_image}}"></image>
-    <text class='post-content'>{{content}}</text>
-    <view class='post-like'>
-      <image class='post-like-image' src="/images/star.png"></image>
-      <text class='post-like-font'>{{collect_num}}</text>
-      <image class='post-like-image' src="/images/view.png"></image>
-      <text class='post-like-font'>{{view_num}}</text>
-    </view>
-  </view>
+  </block>
 </view>

@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/posts/posts",
-    "pages/welcome/welcome"
+    "pages/posts/post-detail/post-detail"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#00b26a",
-    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#40ae3b",
+    "navigationBarTextStyle": "#fff",
     "navigationBarTitleText": "gsp 的 小 程 序",
     "backgroundColor": "#ccc",
     "backgroundTextStyle": "light",

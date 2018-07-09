@@ -1,81 +1,10 @@
+/* 绝对路劲和相对路径都可以  */
+/* @import "post-item/post-item-template"; */
+@import "/pages/posts/post-item/post-item-template";
+
 swiper, swiper image {
   width: 750rpx;
   height: 600rpx;
 }
 
-.post-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20rpx;
-  margin-bottom: 40rpx;
-  background-color: #fff;
-  border-bottom: 1px solid #ededed;
-  border-top: 1px solid #ededed;
-  padding-bottom: 5px;
-}
 
-.post-author-data {
-  display: flex;
-  height: 80rpx;
-  margin-top: 10rpx;
-  margin-bottom: 20rpx;
-  padding-left: 10px;
-}
-
-.post-author-data image {
-  width: 80rpx;
-  height: 80rpx;
-  flex: 0 0 80rpx;
-  border-radius: 50%;
-}
-
-.post-author-data text {
-  flex: 1;
-  text-align: center;
-  line-height: 80rpx;
-  margin-left: 10rpx;
-  font-size: 26rpx;
-}
-
-.post-title {
-  padding-left: 10rpx;
-  font-size: 34rpx;
-  color: #ccc;
-  font-weight: bold;
-  margin-bottom: 10rpx;
-}
-
-.post-image {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.post-content {
-  line-height: 40rpx;
-  letter-spacing: 2rpx;
-  color: #666;
-  font-size: 28rpx;
-  margin: 20rpx;
-}
-
-.post-like {
-  height: 40rpx;
-}
-
-.post-like-image {
-  margin-left: 10rpx;
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-
-.post-like-font {
-  margin-left: 30rpx;
-  margin-right: 30rpx;
-  line-height: 40rpx;
-  letter-spacing: 2rpx;
-  color: #666;
-  font-size: 28rpx;
-  vertical-align: middle;
-}
