@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-image {
+  width: 750rpx;
+  height: 460rpx;
+}
+
+.music-image {
+  width: 96rpx;
+  height: 84rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 230rpx;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+}
+
+.author-data {
+  flex-direction: row;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.author-data .avatar {
+  height: 64rpx;
+  width: 64rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.author-data .author {
+  font-size: 30rpx;
+  font-weight: 300;
+  margin-left: 20rpx;
+  vertical-align: middle;
+  color: #666;
+}
+
+.author-data .const-text {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 20rpx;
+  vertical-align: middle;
+}
+
+.author-data .date {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 30rpx;
+  vertical-align: middle;
+}
+
+.title {
+  margin-left: 40rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+  margin-top: 30rpx;
+  letter-spacing: 2rpx;
+  color: #4b556c;
+}
+
+.tool {
+  margin-top: 20rpx;
+}
+
+.circle-img {
+  float: right;
+  vertical-align: middle;
+  margin-right: 40rpx;
+}
+
+.collection-img {
+  width: 92rpx;
+  height: 92rpx;
+}
+
+.share-img {
+  margin-left: 30rpx;
+  width: 92rpx;
+  height: 92rpx;
+}
+
+.line {
+  width: 660rpx;
+  height: 1px;
+  margin: 0 auto;
+  position: relative;
+  top: 46rpx;
+  background-color: #e5e5e5;
+  z-index: -100;
+}
+
+.detail {
+  color: #666;
+  margin: 20rpx 30rpx;
+  letter-spacing: 2px;
+  line-height: 44rpx;
+  font-size: 34rpx;
+}

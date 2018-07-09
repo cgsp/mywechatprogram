@@ -65,10 +65,10 @@ Page({
 
   },
 
-  toDetail(e){
-    console.log(e.currentTarget.dataset.postId);
+  toDetail(e) {
+    const postId = e.currentTarget.dataset.postId;
     wx.navigateTo({
-      url: 'post-detail/post-detail'
+      url: `post-detail/post-detail?postId=${postId}`
     })
   }
 })
