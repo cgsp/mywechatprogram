@@ -1,6 +1,6 @@
 <view class='container'>
   <image class='head-image' src='/images/crap.jpg'></image>
-  <image class='music-image' src='/images/music-start.png'></image>
+  <image class='music-image' src="{{!isPlaying?'/images/music-start.png':'/images/music-stop.png'}}" catch:tap="musicTap"></image>
   <view class='author-data'>
     <image class='avatar' src='/images/avatar.png'></image>
     <text class='author'>胡歌</text>
@@ -10,9 +10,9 @@
   <text class='title'>炉石传说好玩吗</text>
   <view class='tool'>
     <view class='circle-img'>
-      <image wx:if="{{collected}}" bind:tap="cancleCollect"  class='collection-img' src='/images/collection.png'></image>
-      <image wx:else bind:tap="collect" class='collection-img' src='/images/collect-grey.png'></image>
-      <image class='share-img' src='/images/share.png'></image>
+      <image wx:if="{{collected}}" bind:tap="cancleCollect" class='collection-img' src='/images/collection.png'></image>
+      <image wx:else bind:tap="collect" class='collection-img' src='/images/collection-grey.png'></image>
+      <image catchtap="share" class='share-img' src='/images/share.png'></image>
     </view>
     <view class='line'></view>
   </view>

@@ -9,14 +9,13 @@
 }
 
 .music-image {
-  width: 96rpx;
-  height: 84rpx;
+  width: 100rpx;
+  height: 88rpx;
   border-radius: 50%;
   position: absolute;
   left: 50%;
   top: 230rpx;
   transform: translate(-50%, -50%);
-  opacity: 0.6;
 }
 
 .author-data {
