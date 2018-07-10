@@ -10,7 +10,8 @@
   <text class='title'>炉石传说好玩吗</text>
   <view class='tool'>
     <view class='circle-img'>
-      <image class='collection-img' src='/images/collection.png'></image>
+      <image wx:if="{{collected}}" bind:tap="cancleCollect"  class='collection-img' src='/images/collection.png'></image>
+      <image wx:else bind:tap="collect" class='collection-img' src='/images/collect-grey.png'></image>
       <image class='share-img' src='/images/share.png'></image>
     </view>
     <view class='line'></view>
