@@ -1,3 +1,6 @@
+const AppData = getApp().globalData;
+const baseUrl = AppData.baseUrl;
+console.log(baseUrl);
 Page({
 
   /**
@@ -11,74 +14,41 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    const params = '?start=0&count=3';
+    const inTheatersUrl = baseUrl + '/v2/movie/in_theaters' + params;
+    const comingSongUrl = baseUrl + '/v2/movie/coming_soon' + params;
+    const top250Url = baseUrl + '/v2/movie/top250' + params;
+
+    this.getMoviesData(inTheatersUrl, (res) => {
+      console.log(res.data.subjects);
+    });
+
+    this.getMoviesData(comingSongUrl, (res) => {
+      console.log(res.data.subjects);
+    });
+
+    this.getMoviesData(top250Url, (res) => {
+      console.log(res.data.subjects);
+    })
+
+  },
+
+  getMoviesData(url, handleRes) {
     wx.request({
-      url: 'http://t.yushu.im/v2/movie/top250',
+      url: url,
       data: {},
       method: 'GET',
-      header:{
-        'Content-Type':'application/json'
+      header: {
+        'Content-Type': 'application/json'
       },
       success: function(res) {
-        console.log('success');
-        console.log(res);
+        res && handleRes(res);
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log('fail');
-        console.log(res);
-      },
-      complete: function (res) {
-        console.log('complete');
         console.log(res);
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
   }
+
 })

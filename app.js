@@ -4,7 +4,7 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function() {
-    
+
   },
 
   /**
@@ -30,6 +30,7 @@ App({
 
   globalData: {
     g_playingMusic: false,
-    g_postId: null
+    g_postId: null,
+    baseUrl: 'http://t.yushu.im'
   }
 })
