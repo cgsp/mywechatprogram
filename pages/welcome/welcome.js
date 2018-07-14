@@ -1,7 +1,7 @@
 Page({
 
   open() {
-    wx.redirectTo({
+    wx.switchTab({
       url: '../posts/posts',
       success() {
         console.log('成功')

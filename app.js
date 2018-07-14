@@ -30,6 +30,7 @@ App({
 
   globalData: {
     g_playingMusic: false,
-    g_postId: null
+    g_postId: null,
+    baseUrl: 'http://t.yushu.im'
   }
 })
