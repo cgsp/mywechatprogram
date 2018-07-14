@@ -21,14 +21,14 @@
       {
         "pagePath": "pages/posts/posts",
         "text": "阅读",
-        "iconPath": "/images/images/avatar/1.png",
-        "selectedIconPath": "/images/images/avatar/2.png"
+        "iconPath": "/images/avatar/1.png",
+        "selectedIconPath": "/images/avatar/2.png"
       },
       {
         "pagePath": "pages/movies/movies",
         "text": "电影",
-        "iconPath": "/images/images/avatar/3.png",
-        "selectedIconPath": "/images/images/avatar/4.png"
+        "iconPath": "/images/avatar/3.png",
+        "selectedIconPath": "/images/avatar/4.png"
       }
     ]
   }
