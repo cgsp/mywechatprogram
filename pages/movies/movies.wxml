@@ -1,6 +1,6 @@
 <import src="./movies-list/movies-list-template.wxml" />
 <view class='movies-container'>
-  <template is="movies-list" />
-  <template is="movies-list" />
-  <template is="movies-list" />
+  <template is="movies-list" data="{{...inTheaters}}" />
+  <template is="movies-list" data="{{...comingSong}}" />
+  <template is="movies-list" data="{{...top250}}" />
 </view>

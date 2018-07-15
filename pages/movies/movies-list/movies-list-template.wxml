@@ -2,16 +2,16 @@
 <template name="movies-list">
   <view class='movie-list-container'>
     <view class='movie-list-head'>
-      <text class='slogan'>正在热映</text>
+      <text class='slogan'>{{name}}</text>
       <view class='more'>
         <text class='more-text'>更多</text>
         <image class='more-img' src="/images/arrow-right.png"></image>
       </view>
     </view>
     <view class='movie-item-container'>
-      <template is="movie-item" />
-      <template is="movie-item" />
-      <template is="movie-item" />
+      <block wx:for="{{movies}}" wx:for-item="movie" wx:key="index">
+         <template is="movie-item" data="{{...movie}}" />  
+      </block>
     </view>
   </view>
 </template>

@@ -1,13 +1,16 @@
 const AppData = getApp().globalData;
 const baseUrl = AppData.baseUrl;
-console.log(baseUrl);
+const toStarsArrNoHalf = require('../../utils/utils.js').toStarsArrNoHalf;
+// console.log(baseUrl);
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    inTheaters: {},
+    comingSong: {},
+    top250: {}
   },
 
   /**
@@ -20,15 +23,34 @@ Page({
     const top250Url = baseUrl + '/v2/movie/top250' + params;
 
     this.getMoviesData(inTheatersUrl, (res) => {
-      console.log(res.data.subjects);
+      const arr = this.handleMovieData(res.data.subjects);
+      // debugger;
+      this.setData({
+        inTheaters: {
+          name: '正在热映',
+          movies: arr
+        }
+      })
     });
 
     this.getMoviesData(comingSongUrl, (res) => {
-      console.log(res.data.subjects);
+      const arr = this.handleMovieData(res.data.subjects);
+      this.setData({
+        comingSong: {
+          name: '即将上映',
+          movies: arr
+        }
+      })
     });
 
     this.getMoviesData(top250Url, (res) => {
-      console.log(res.data.subjects);
+      const arr = this.handleMovieData(res.data.subjects);
+      this.setData({
+        top250: {
+          name: 'Top250',
+          movies: arr
+        }
+      })
     })
 
   },
@@ -49,6 +71,27 @@ Page({
         console.log(res);
       }
     })
+  },
+
+  handleMovieData(data) {
+    const arr = [];
+    for (const k in data) {
+      const item = data[k];
+      let title = item.title;
+      if (title.length > 6) {
+        title = title.substr(0, 6) + '...';
+      }
+      const temp = {
+        title: title,
+        average: item.rating.average,
+        coverageUrl: item.images.large,
+        movieId: item.id,
+        stars: toStarsArrNoHalf(item.rating.stars)
+      }
+      // debugger;
+      arr.push(temp);
+    }
+    return arr;
   }
 
 })
