@@ -92,6 +92,13 @@ Page({
       arr.push(temp);
     }
     return arr;
+  },
+
+  onMoreTap(e) {
+    const title = e.currentTarget.dataset.title;
+    wx.navigateTo({
+      url: `more-movies/more-movies?title=${title}`
+    })
   }
 
 })
