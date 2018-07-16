@@ -11,7 +11,8 @@ Page({
     movies: [],
     url: '',
     start: 0,
-    count: 20
+    count: 20,
+    threshold: 500
   },
 
   /**
@@ -78,6 +79,12 @@ Page({
   },
 
   getMoviesData(url, handleRes) {
+    wx.showLoading({
+      title: '加载中',
+    })
+    // wx.showNavigationBarLoading('正在加载');
+
+
     wx.request({
       url: url,
       data: {},
@@ -87,6 +94,10 @@ Page({
       },
       success: function(res) {
         res && handleRes(res);
+        setTimeout(function() {
+          wx.hideLoading();
+          // wx.hideNavigationBarLoading();
+        }, 200)
       },
       fail: function(res) {
         console.log('fail');
@@ -127,7 +138,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    console.log('刷新');
   },
 
   /**
@@ -144,8 +155,19 @@ Page({
 
   },
   upper(e) {
-    console.log(e);
-    console.log('顶部');
+    setTimeout(() => {
+      console.log(e);
+      console.log('顶部');
+      this.setData({
+        movies: []
+      })
+      const start = 0;
+      this.setData({
+        start: start
+      });
+      let url = `${this.data.url}?start=${start * 20}&count=20`;
+      this.handleAjax(url);
+    }, 100)
   },
   lower(e) {
     const count = this.data.count;

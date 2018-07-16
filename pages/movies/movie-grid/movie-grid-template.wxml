@@ -1,6 +1,6 @@
 <import src="../movie-item/movie-item-template.wxml" />
 <template name="movie-grid">
-  <scroll-view style="height:1300rpx;" scroll-y="true" scroll-x="{{false}}" bindscrolltoupper="upper" bindscrolltolower="lower">
+  <scroll-view style="height:1300rpx;" scroll-y="true" scroll-x="{{false}}" bindscrolltoupper="upper" bindscrolltolower="lower" lower-threshold="{{threshold}}">
     <view class='container'>
       <view class='movie-item-container' wx:for="{{movies}}" wx:for-item="movie" wx:key="index">
         <block>
