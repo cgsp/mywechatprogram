@@ -218,5 +218,13 @@ Page({
     // console.log(e);
     console.log('到底了');
     this.handleAjax(searchUrl);
-  }
+  },
+
+  onMovieItemTap(e) {
+    const id = e.currentTarget.dataset.id;
+    const title = e.currentTarget.dataset.title;
+    wx.navigateTo({
+      url: `movie-detail/movie-detail?id=${id}&title=${title}`
+    })
+  },
 })
