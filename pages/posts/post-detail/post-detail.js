@@ -54,6 +54,15 @@ Page({
       AppData.globalData.g_playingMusic = false;
       AppData.globalData.g_postId = null;
     })
+
+    wx.onBackgroundAudioStop(() => {
+      this.setData({
+        isPlaying: false
+      })
+
+      AppData.globalData.g_playingMusic = false;
+      AppData.globalData.g_postId = null;
+    })
   },
 
   /**

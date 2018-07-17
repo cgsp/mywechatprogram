@@ -1,6 +1,18 @@
 <import src="./movies-list/movies-list-template.wxml" />
-<view class='movies-container'>
+<import src="./movie-grid/movie-grid-template.wxml" />
+<view class="search">
+  <icon type='search' size='16' color="#40ae3b"></icon>
+  <input type='text' placeholder='血战钢锯岭' placeholder-class='placeholder-class' confirm-type="search" bindfocus='bindfocus' bindinput="bindinput" bindblur="bindblur" value="{{value}}" bindconfirm="bindconfirm" />
+  <icon type='clear' size='16' color="#40ae3b" bindtap='clear'></icon>
+</view>
+<view class='movies-container' wx:if="{{!searchResult}}">
   <template is="movies-list" data="{{...inTheaters}}" />
   <template is="movies-list" data="{{...comingSong}}" />
   <template is="movies-list" data="{{...top250}}" />
+</view>
+<view class='search-result' wx:if="{{searchResult}}">
+  <view wx:if="{{searchList.movies.length}}">
+    <template is="movie-grid" data="{{...searchList}}" />
+  </view>
+  <view class='no-result' wx:if="{{!searchList.movies.length}}">暂无搜索结果</view>
 </view>
