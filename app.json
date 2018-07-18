@@ -13,7 +13,7 @@
     "navigationBarTitleText": "gsp 的 小 程 序",
     "backgroundColor": "#ccc",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "backgroundColor": "#40ae3b",

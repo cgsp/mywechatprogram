@@ -11,7 +11,7 @@
       <text class='plain-font'>人评论</text>
     </view>
   </view>
-  <image class='movie-img' src="{{movie.movieImg}}" />
+  <image class='movie-img' src="{{movie.movieImg}}" data-src="{{movie.movieImg}}" catchtap='viewImage' />
   <view class='summary'>
     <view class='origin-title'>
       <text>{{movie.originalTitle}}</text>
@@ -31,8 +31,8 @@
   </view>
   <view class='hr'></view>
   <view class='synopsis'>
-    <text style='color:#999;'>剧情简介</text>
-    <text class='summary-content'>{{movie.summary}}</text>
+    <view style='color:#999;'>剧情简介</view>
+    <view class='summary-content'>{{movie.summary}}</view>
   </view>
   <view class='hr'></view>
   <view class='cast'>

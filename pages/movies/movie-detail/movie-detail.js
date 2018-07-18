@@ -87,4 +87,12 @@ Page({
     })
   },
 
+  viewImage(e) {
+    const src = e.currentTarget.dataset.src;
+    wx.previewImage({
+      current: src, // 当前图的链接
+      urls: [src] // 预览的图的链接
+    })
+  }
+
 })
