@@ -31,6 +31,7 @@ App({
   globalData: {
     g_playingMusic: false,
     g_postId: null,
-    baseUrl: 'http://t.yushu.im'
+    // baseUrl: 'http://t.yushu.im'
+    baseUrl: 'https://api.douban.com'
   }
 })
